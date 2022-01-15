@@ -1,0 +1,22 @@
+{
+  "name": "console-game-engine",
+  "version": "1.0.0",
+  "description": "A basic console game engine for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akif9748/node-console-game-engine.git"
+  },
+  "keywords": [
+    "console"
+  ],
+  "author": "Akif9748",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Akif9748/node-console-game-engine/issues"
+  },
+  "homepage": "https://github.com/Akif9748/node-console-game-engine#readme"
+}
