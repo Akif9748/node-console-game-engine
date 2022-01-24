@@ -1,13 +1,17 @@
+/**
+ * ConsoleGame class. For creating a new console game.
+ */
+class ConsoleGame {
 
-module.exports = class ConsoleGame {
     /**
      * Create game map and background character 
      * @param {Number} x A number for X axis of map. default: 16
      * @param {Number} y A number for Y axis of map. default: 8
      * @param {String} character Maps backgound character.  default: "█" 
      */
+
     constructor(x = 16, y = 8, character = "█") {
-        this.alan = createMap(x, y, character);
+        this.map = createMap(x, y, character);
         this.x = x;
         this.y = y;
         this.character = character;
@@ -16,7 +20,7 @@ module.exports = class ConsoleGame {
    * Reset the map
    */
     reset() {
-        this.alan = createMap(this.x, this.y, this.character);
+        this.map = createMap(this.x, this.y, this.character);
     }
     /**
     * Clear the console
@@ -27,13 +31,16 @@ module.exports = class ConsoleGame {
     /**
     * Render the map
     */
+
     render() {
         this.clear();
-        for (const hat of this.alan) {
-            for (const eleman of hat) process.stdout.write(eleman);
-            process.stdout.write("\n");
-        }
+        var write = "";
+        for (const line of this.map)
+            write += line.join("") + "\n";
+
+        process.stdout.write(write);
     }
+
     /**
    * Set a character in map
    * @param {Number} x A number for X axis of character. Default: 1
@@ -41,11 +48,8 @@ module.exports = class ConsoleGame {
    * @param {String} character Character for putting. Default: Blank
    */
     set(x = 1, y = 1, character = " ") {
-
-
-        this.alan[y - 1][x - 1] = character;
+        this.map[y - 1][x - 1] = character;
         this.render();
-
     }
     /**
    * Get a character from map
@@ -53,7 +57,7 @@ module.exports = class ConsoleGame {
    * @param {Number} y A number for Y axis of character.
    */
     get(x, y) {
-        return this.alan[y - 1][x - 1];
+        return this.map[y - 1][x - 1];
     }
 
 }
@@ -61,14 +65,16 @@ module.exports = class ConsoleGame {
 
 
 function createMap(x, y, character) {
-    var arr = [];
+    const arr = [];
 
-    for (var i = 0; i < y; i++) {
-        arr[i] = [];
-        for (var it = 0; it < x; it++) {
-            arr[i][it] = character;
-        }
+    for (var line = 0; line < y; line++) {
+        arr[line] = [];
+
+        for (var i = 0; i < x; i++)
+            arr[line][i] = character;
     }
 
     return arr;
 }
+
+module.exports = ConsoleGame;
