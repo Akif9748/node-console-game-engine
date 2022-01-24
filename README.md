@@ -1,5 +1,5 @@
-# Nodejs Console Game Engine
-A basic console game engine for nodejs
+# Node.js Console Game Engine
+A basic console game engine for Node.js.
 
 ## Installation
 
@@ -8,11 +8,11 @@ You can use npm to install Engine: `npm install console-game-engine`
 ## Quick start
 
 ```js
-const ConsoleGame = require("console-game-engine")
+const ConsoleGame = require("console-game-engine");
 //New game object
-const game = new ConsoleGame(16, 8);
+const game = new ConsoleGame();
 //First render.
-game.render()
+game.render();
 /*Result of this render:
 ████████████████
 ████████████████
@@ -23,9 +23,12 @@ game.render()
 ████████████████
 ████████████████
 */
-for (const [x, y] of [[2, 3], [3, 4], [4, 5], [5, 6]]) {
-    game.set(x, y)
 
+const write = [[2, 3], [3, 4], [4, 5], [5, 6]];
+
+
+for (const [x, y] of write) {
+    game.set(x, y);
 }
 /*Result of this:
 ████████████████
@@ -35,12 +38,22 @@ for (const [x, y] of [[2, 3], [3, 4], [4, 5], [5, 6]]) {
 ███ ████████████
 ████ ███████████
 ████████████████
-████████████████*/
-for (const [x, y] of [[2, 3], [3, 4], [4, 5], [5, 6]]) {
-    game.set(x, y)
+████████████████
+*/
 
+for (const [x, y] of write){
+    game.set(x + 6, y);
 }
-
+/*Result of this:
+████████████████
+████████████████
+█ █████ ████████
+██ █████ ███████
+███ █████ ██████
+████ █████ █████
+████████████████
+████████████████
+*/
 ```
 
 #### Result:
@@ -88,7 +101,7 @@ const x=1,y=1, chracter = " ";
 
  game.set(x,y,chracter );
 ```
-**No need to use the render function, it has render in itself.**
+**WARNING:** No need to use the render function, it has render in itself.
 
 
 ### Get:
@@ -98,4 +111,4 @@ Getting a Chracter from map:
  const chracter= game.get(1,1);
  console.log(chracter)
 ```
-**It has not default parameters.**
+**WARNING:** It has not default parameters.
