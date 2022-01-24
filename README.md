@@ -1,7 +1,7 @@
 # Node.js Console Game Engine
 A basic console game engine for Node.js.
 
-(**Example Game**)[https://github.com/Akif9748/cge-example]
+[**Example Game**](https://github.com/Akif9748/cge-example)
 
 ## Installation
 
