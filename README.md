@@ -1,8 +1,6 @@
 # Node.js Console Game Engine
 A basic console game engine for Node.js.
 
-[**Example Game**](https://github.com/Akif9748/cge-example)
-
 ## Installation
 
 You can use npm to install Engine: `npm install console-game-engine`
@@ -26,7 +24,7 @@ game.render();
 ████████████████
 */
 
-const write = [[2, 3], [3, 4], [4, 5], [5, 6]];
+const write = [[1, 2], [2, 3], [3, 4], [4, 5]];
 
 
 for (const [x, y] of write) {

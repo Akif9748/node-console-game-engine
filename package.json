@@ -1,6 +1,6 @@
 {
   "name": "console-game-engine",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A basic console game engine for Node.js.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "console",
-    "game"
+    "game",
+    "engine"
   ],
   "author": "Akif9748 (https://akif9748.me)",
   "license": "GPL-3.0-or-later",
